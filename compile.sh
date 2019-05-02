@@ -1,0 +1,1 @@
+javac -d bin -sourcepath src -cp lib/mysql-connector-java-5.1.38.jar:lib/HikariCP-2.4.7.jar:lib/slf4j-api-1.7.25.jar src/com/botscrew/testtask/TestTask.java
