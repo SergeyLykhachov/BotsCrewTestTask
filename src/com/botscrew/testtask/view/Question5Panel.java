@@ -20,7 +20,6 @@ import javax.swing.border.EtchedBorder;
 
 import com.botscrew.testtask.model.Model;
 import com.botscrew.testtask.util.Updatable;
-import com.botscrew.testtask.util.SQLFormer;
 
 public class Question5Panel extends JPanel implements Updatable {
 	private Model model;
