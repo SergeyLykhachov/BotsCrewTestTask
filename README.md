@@ -8,7 +8,7 @@ Also, update properties/database.properties file in accordance with your databas
 use the project.(Note: database used in the project is MySQL).Also, an sql script named TestScript.sql is placed in the project root
 folder for the purpose of database schema and sample data set initialization.
 
-In addition, for convenience sake, two mode files are present at the root level: 
+In addition, for convenience sake, two more files are present at the project root level: 
 1. SQL.sql contains 5 sql queries pertaining to the 5 questions asked and chosen database schema.
 2. DB_design.png depicts database schema graphically.
 
