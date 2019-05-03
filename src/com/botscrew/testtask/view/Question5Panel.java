@@ -44,7 +44,7 @@ public class Question5Panel extends JPanel implements Updatable {
 			question = "Global search by ";
 			sqlTemplate = "SELECT first_name, last_name "
 						+ "FROM lector "
-						+ "WHERE first_name LIKE '%?%' OR last_name LIKE '%?%'";
+						+ "WHERE first_name LIKE ? OR last_name LIKE ?";
 		}
 		private Model model;
 		private JTextField textField;
@@ -58,13 +58,11 @@ public class Question5Panel extends JPanel implements Updatable {
 				e -> {
 					q5p.setTemplate(this.textField.getText());
 					this.textField.setText("");
-					String sql = SQLFormer.formSQL(
-						this.sqlTemplate,
-						q5p.getTemplate(),
-						q5p.getTemplate()
-					);
-					System.out.println(sql);
-					this.model.executeQuery(sql);		
+					this.model.executeQuery(
+						InquiryPanel.sqlTemplate,
+						"%" + q5p.getTemplate() + "%",
+						"%" + q5p.getTemplate() + "%"
+					);		
 			});
 			this.add(label);
 			this.add(textField);

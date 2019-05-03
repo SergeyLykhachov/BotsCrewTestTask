@@ -42,7 +42,7 @@ public class Question1Panel extends JPanel implements Updatable {
 						+ "WHERE lector_id = ("
 						   	+ "SELECT head_id "
 						   	+ "FROM department "
-						   	+ "WHERE department_name = '?'"
+						   	+ "WHERE department_name = ?"
 						+ ");";
 		}
 		private Model model;
@@ -57,12 +57,10 @@ public class Question1Panel extends JPanel implements Updatable {
 				e -> {
 					q1p.setDepartmentName(this.textField.getText());
 					this.textField.setText("");
-					String sql = SQLFormer.formSQL(
-						this.sqlTemplate,
+					this.model.executeQuery(
+						InquiryPanel.sqlTemplate,
 						q1p.getDepartmentName()
-					);
-					//System.out.println(sql);
-					this.model.executeQuery(sql);		
+					);		
 			});
 			this.add(label);
 			this.add(textField);

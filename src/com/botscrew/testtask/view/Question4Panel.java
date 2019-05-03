@@ -41,7 +41,7 @@ public class Question4Panel extends JPanel implements Updatable {
 			subQuestion2 = "department";
 			sqlTemplate = "SELECT COUNT(*) "
 						+ "FROM lector_department "
-						+ "WHERE department_name = '?'";
+						+ "WHERE department_name = ?";
 		}
 		private Model model;
 		private JTextField textField;
@@ -57,12 +57,10 @@ public class Question4Panel extends JPanel implements Updatable {
 				e -> {
 					q4p.setDepartmentName(this.textField.getText());
 					this.textField.setText("");
-					String sql = SQLFormer.formSQL(
-						this.sqlTemplate,
+					this.model.executeQuery(
+						InquiryPanel.sqlTemplate,
 						q4p.getDepartmentName()
-					);
-					//System.out.println(sql);
-					this.model.executeQuery(sql);		
+					);		
 			});
 			this.add(label1);
 			this.add(textField);

@@ -53,7 +53,7 @@ public class Question2Panel extends JPanel implements Updatable {
 							      + "JOIN lector_department "
 								  + "ON subquery1.lector_id = lector_department.lector_id"
 							  + ") AS subquery2 "
-							  + "WHERE department_name = '?'"
+							  + "WHERE department_name = ?"
 					  	+ ") AS subquery3 "
 					  	+ "GROUP BY degree";
 		}
@@ -71,12 +71,10 @@ public class Question2Panel extends JPanel implements Updatable {
 				e -> {
 					q2p.setDepartmentName(this.textField.getText());
 					this.textField.setText("");
-					String sql = SQLFormer.formSQL(
-						this.sqlTemplate,
+					this.model.executeQuery(
+						InquiryPanel.sqlTemplate,
 						q2p.getDepartmentName()
-					);
-					//System.out.println(sql);
-					this.model.executeQuery(sql);		
+					);		
 			});
 			this.add(label1);
 			this.add(textField);
