@@ -20,11 +20,15 @@ import javax.swing.JPasswordField;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.botscrew.testtask.model.Model;
 import com.botscrew.testtask.util.Observer;
 import com.botscrew.testtask.util.Updatable;
 
 public class View extends JPanel implements Observer {
+	private static Logger LOGGER = LoggerFactory.getLogger(View.class);
 	static final int WIDTH = 600;
 	static final int HEIGHT = 450;
 	private Model model;
@@ -37,8 +41,8 @@ public class View extends JPanel implements Observer {
 			EventQueue.invokeAndWait(
 				() -> initSwing()
 			);
-		} catch (Exception ex) {
-			ex.printStackTrace();
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage(), e);
 			System.exit(-1);
 		}
 	}
@@ -63,8 +67,8 @@ public class View extends JPanel implements Observer {
 			JLabel label = new JLabel();
 			label.setText(labelText);
 			this.textField = isPassword ? new JPasswordField(20) : new JTextField(20);
-			super.add(label);
-			super.add(this.textField);
+			this.add(label);
+			this.add(this.textField);
 		}
 		String getEnteredText() {
 			return textField.getClass() != JPasswordField.class

@@ -18,11 +18,14 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EtchedBorder;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.botscrew.testtask.model.Model;
 import com.botscrew.testtask.util.Updatable;
 
 public class Question5Panel extends JPanel implements Updatable {
-	private Model model;
+	private static Logger LOGGER = LoggerFactory.getLogger(Question5Panel.class);
 	private AnswerPanel answerPanel;
 	private String template;
 	Question5Panel(Model model) {

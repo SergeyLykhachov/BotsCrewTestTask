@@ -12,11 +12,14 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EtchedBorder;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.botscrew.testtask.model.Model;
 import com.botscrew.testtask.util.Updatable;
 
 public class Question3Panel extends JPanel implements Updatable {
-	private Model model;
+	private static Logger LOGGER = LoggerFactory.getLogger(Question3Panel.class);
 	private AnswerPanel answerPanel;
 	private String departmentName;
 	Question3Panel(Model model) {
@@ -25,10 +28,10 @@ public class Question3Panel extends JPanel implements Updatable {
 		add(new InquiryPanel(model, this));
 		add(answerPanel);
 	}
-	void setDepartmentName(String departmentName) {
+	private void setDepartmentName(String departmentName) {
 		this.departmentName = departmentName;
 	}
-	String getDepartmentName() {
+	private String getDepartmentName() {
 		return this.departmentName;
 	}
 	private static class InquiryPanel extends JPanel {
@@ -107,12 +110,12 @@ public class Question3Panel extends JPanel implements Updatable {
 				averageSalary = resultSet.getString(1);
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e.getMessage(), e);
 		} finally {
 			try {
 				resultSet.close();
-			} catch (Exception e) {
-				System.out.println(e.getCause());
+			} catch (SQLException e) {
+				LOGGER.error(e.getMessage(), e);
 			}
 		}
 		this.answerPanel.setAnswer(
