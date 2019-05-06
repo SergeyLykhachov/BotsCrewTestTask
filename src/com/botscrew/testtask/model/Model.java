@@ -1,11 +1,9 @@
 package com.botscrew.testtask.model;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.PreparedStatement;
 import java.util.stream.Stream;
 
 import org.slf4j.Logger;
@@ -36,8 +34,8 @@ public class Model implements Subject {
     					} catch (SQLException e) {
     						LOGGER.error(e.getMessage(), e);
     					}
-    		});
-    		LOGGER.info(extractSqlFromPreparedStatement(ps));
+			});
+			LOGGER.info(extractSqlFromPreparedStatement(ps));
 			this.resultSet = ps.executeQuery();
 			this.notifyObserver();
 		} catch (SQLException e) {

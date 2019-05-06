@@ -81,24 +81,24 @@ public class View extends JPanel implements Observer {
 		private JTabbedPane tabbedPane;
 		WorkPanel(Model model) {
 			this.setLayout(new GridLayout(1, 1));
-        	this.tabbedPane = new JTabbedPane();
-        	JPanel panel1 = makeQuestion1Panel(model);
-        	tabbedPane.addTab("Question 1", panel1);
-        	tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
-        	JPanel panel2 = makeQuestion2Panel(model);
-        	tabbedPane.addTab("Question 2", panel2);
-        	tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
-        	JPanel panel3 = makeQuestion3Panel(model);
-        	tabbedPane.addTab("Question 3", panel3);
-        	tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
-        	JPanel panel4 = makeQuestion4Panel(model);
-        	tabbedPane.addTab("Question 4", panel4);
-        	tabbedPane.setMnemonicAt(3, KeyEvent.VK_4);
-        	JPanel panel5 = makeQuestion5Panel(model);
-        	tabbedPane.addTab("Question 5", panel5);
-        	tabbedPane.setMnemonicAt(4, KeyEvent.VK_5);
-        	this.add(tabbedPane);  
-        	tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+			this.tabbedPane = new JTabbedPane();
+			JPanel panel1 = makeQuestion1Panel(model);
+			tabbedPane.addTab("Question 1", panel1);
+			tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
+			JPanel panel2 = makeQuestion2Panel(model);
+			tabbedPane.addTab("Question 2", panel2);
+			tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
+			JPanel panel3 = makeQuestion3Panel(model);
+			tabbedPane.addTab("Question 3", panel3);
+			tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
+			JPanel panel4 = makeQuestion4Panel(model);
+			tabbedPane.addTab("Question 4", panel4);
+			tabbedPane.setMnemonicAt(3, KeyEvent.VK_4);
+			JPanel panel5 = makeQuestion5Panel(model);
+			tabbedPane.addTab("Question 5", panel5);
+			tabbedPane.setMnemonicAt(4, KeyEvent.VK_5);
+			this.add(tabbedPane);  
+			tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		}
 		JTabbedPane getTabbedPane() {
 			return this.tabbedPane;
