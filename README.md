@@ -4,11 +4,11 @@ this particular application interacts with its user via an intuitive and simple 
 has been written in simple text editor, the build and launch scripts are located in the project root directory named
 compile and run respectively, just pick one appropriate for your operating system. Prior to building/compiling -- bin directory
 needs to be created at the project root level (GitHub inconveniently prohibits the presence of empty folders within repositories).
-Also, update properties/database.properties file in accordance with your database credentials info in order to be able to successfully
-use the project.(Note: database used in the project is MySQL).Also, an sql script named TestScript.sql is placed in the project root
-folder for the purpose of database schema and sample data set initialization.
+Also, update properties/database.properties file in accordance with your database credentials in order to be able to successfully
+establish communication between your database and the application.(Note: database used in the project is MySQL). Also, an sql script 
+named TestScript.sql is placed in the project root folder for the purpose of database schema and sample data set initialization.
 
 In addition, for convenience sake, two more files are present at the project root level: 
-1. SQL.sql contains 5 sql queries pertaining to the 5 questions asked and chosen database schema.
-2. DB_design.png depicts database schema graphically.
+1. SQL.sql -- contains 5 sql queries pertaining to the 5 questions asked and designed database schema.
+2. DB_design.png -- depicts database schema graphically.
 

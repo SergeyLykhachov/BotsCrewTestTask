@@ -1,1 +1,1 @@
-java -cp bin;lib/mysql-connector-java-5.1.38.jar;lib/HikariCP-2.4.7.jar;lib/slf4j-api-1.7.25.jar com.botscrew.testtask.TestTask
+java -cp bin;lib/mysql-connector-java-5.1.38.jar;lib/HikariCP-2.4.7.jar;lib/slf4j-api-1.7.25.jar;lib/slf4j-simple-1.7.25.jar com.botscrew.testtask.TestTask
