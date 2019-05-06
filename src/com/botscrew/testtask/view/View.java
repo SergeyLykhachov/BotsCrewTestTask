@@ -103,21 +103,21 @@ public class View extends JPanel implements Observer {
 		JTabbedPane getTabbedPane() {
 			return this.tabbedPane;
 		}
-    	private JPanel makeQuestion1Panel(Model model) {
-    		return new Question1Panel(model);
-    	}
-    	private JPanel makeQuestion2Panel(Model model) {
-    		return new Question2Panel(model);
-    	}
-    	private JPanel makeQuestion3Panel(Model model) {
-    		return new Question3Panel(model);
-    	}
-    	private JPanel makeQuestion4Panel(Model model) {
-    		return new Question4Panel(model);
-    	}
-    	private JPanel makeQuestion5Panel(Model model) {
-    		return new Question5Panel(model);
-    	}
+		private JPanel makeQuestion1Panel(Model model) {
+			return new Question1Panel(model);
+		}
+		private JPanel makeQuestion2Panel(Model model) {
+			return new Question2Panel(model);
+		}
+		private JPanel makeQuestion3Panel(Model model) {
+			return new Question3Panel(model);
+		}
+		private JPanel makeQuestion4Panel(Model model) {
+			return new Question4Panel(model);
+		}
+		private JPanel makeQuestion5Panel(Model model) {
+			return new Question5Panel(model);
+		}
 		@Override
 		public Dimension getPreferredSize() {
 			return new Dimension(View.WIDTH, View.HEIGHT);
