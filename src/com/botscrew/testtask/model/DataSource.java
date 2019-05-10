@@ -20,6 +20,7 @@ class DataSource {
 			properties.load(new FileInputStream("properties/database.properties"));
 		} catch (IOException e) {
 			e.printStackTrace();
+			System.exit(-1);
 		}
 	}
 	private HikariDataSource dataSource;

@@ -31,12 +31,11 @@ public class View extends JPanel implements Observer {
 	private static Logger LOGGER = LoggerFactory.getLogger(View.class);
 	static final int WIDTH = 600;
 	static final int HEIGHT = 450;
-	private Model model;
 	private JPanel authenticationPanel;
 	private WorkPanel workPanel;
 	public View(Model model) {
-		this.model = model;
-		this.model.registerObserver(this);
+		model.registerObserver(this);
+		this.workPanel = new WorkPanel(model);
 		try {
 			EventQueue.invokeAndWait(
 				() -> initSwing()
@@ -51,8 +50,7 @@ public class View extends JPanel implements Observer {
 		((Updatable) this.workPanel.getTabbedPane().getSelectedComponent()).post(resultSet);
 	}
 	private void initSwing() {
-		this.workPanel = new WorkPanel(this.model);
-		this.add(workPanel);
+		this.add(this.workPanel);
 		JFrame jf = new JFrame("TestTask");
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.add(this, BorderLayout.CENTER);
