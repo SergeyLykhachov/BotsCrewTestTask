@@ -21,10 +21,10 @@ import com.botscrew.testtask.util.Observer;
 import com.botscrew.testtask.util.Updatable;
 
 public class View extends JPanel implements Observer {
+	private static final long serialVersionUID = 1L;
 	private static Logger LOGGER = LoggerFactory.getLogger(View.class);
 	static final int WIDTH = 600;
 	static final int HEIGHT = 450;
-	private JPanel authenticationPanel;
 	private WorkPanel workPanel;
 	public View(Model model) {
 		model.registerObserver(this);
@@ -53,6 +53,7 @@ public class View extends JPanel implements Observer {
 		jf.setVisible(true);
 	}
 	static class MyFormField extends JPanel {
+		private static final long serialVersionUID = 1L;
 		JTextField textField;
 		MyFormField(String labelText, boolean isPassword) {
 			JLabel label = new JLabel();
@@ -73,6 +74,7 @@ public class View extends JPanel implements Observer {
 		}
 	}
 	private static class WorkPanel extends JPanel {
+		private static final long serialVersionUID = 1L;
 		private JTabbedPane tabbedPane;
 		WorkPanel(Model model) {
 			this.setLayout(new GridLayout(1, 1));

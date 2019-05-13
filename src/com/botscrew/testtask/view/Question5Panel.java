@@ -1,8 +1,6 @@
 package com.botscrew.testtask.view;
 
 import java.awt.BorderLayout;
-import java.awt.Graphics;
-import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.ResultSet;
@@ -14,9 +12,6 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.EtchedBorder;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +20,7 @@ import com.botscrew.testtask.model.Model;
 import com.botscrew.testtask.util.Updatable;
 
 public class Question5Panel extends JPanel implements Updatable {
+	private static final long serialVersionUID = 1L;
 	private static Logger LOGGER = LoggerFactory.getLogger(Question5Panel.class);
 	private AnswerPanel answerPanel;
 	private String template;
@@ -40,6 +36,7 @@ public class Question5Panel extends JPanel implements Updatable {
 		return this.template;
 	}
 	private static class InquiryPanel extends JPanel {
+		private static final long serialVersionUID = 1L;
 		static final String question;
 		static final String sqlTemplate;
 		static {
@@ -72,6 +69,7 @@ public class Question5Panel extends JPanel implements Updatable {
 		}
 	}
 	private static class AnswerPanel extends JPanel {
+		private static final long serialVersionUID = 1L;
 		private DefaultListModel<String> nameListModel;
 		AnswerPanel() {
 			JLabel label = new JLabel();
@@ -104,12 +102,12 @@ public class Question5Panel extends JPanel implements Updatable {
 				list.add(name);
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e.getMessage(), e);
 		} finally {
 			try {
 				resultSet.close();
 			} catch (Exception e) {
-				System.out.println(e.getCause());
+				LOGGER.error(e.getMessage(), e);
 			}
 		}
 		this.answerPanel.setAnswer(list);

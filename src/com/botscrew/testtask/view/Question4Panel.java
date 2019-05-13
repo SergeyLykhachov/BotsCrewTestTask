@@ -19,6 +19,7 @@ import com.botscrew.testtask.model.Model;
 import com.botscrew.testtask.util.Updatable;
 
 public class Question4Panel extends JPanel implements Updatable {
+	private static final long serialVersionUID = 1L;
 	private static Logger LOGGER = LoggerFactory.getLogger(Question4Panel.class);
 	private AnswerPanel answerPanel;
 	private String departmentName;
@@ -35,6 +36,7 @@ public class Question4Panel extends JPanel implements Updatable {
 		return this.departmentName;
 	}
 	private static class InquiryPanel extends JPanel {
+		private static final long serialVersionUID = 1L;
 		static final String subQuestion1;
 		static final String subQuestion2;
 		static final String sqlTemplate;
@@ -77,6 +79,7 @@ public class Question4Panel extends JPanel implements Updatable {
 		}
 	}
 	private static class AnswerPanel extends JPanel {
+		private static final long serialVersionUID = 1L;
 		private JLabel label;
 		AnswerPanel() {
 			this.label = new JLabel();
