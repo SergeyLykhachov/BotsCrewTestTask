@@ -31,7 +31,7 @@ class DataSource {
 		this.dataSource.setUsername(properties.getProperty(DB_USR_NAME));
 		this.dataSource.setPassword(properties.getProperty(DB_PASSWORD));
 		this.dataSource.setMinimumIdle(100);
-		this.dataSource.setMaximumPoolSize(10);
+		this.dataSource.setMaximumPoolSize(1);
 		this.dataSource.setAutoCommit(false);
 	}
 	public Connection getConnection() throws SQLException {
