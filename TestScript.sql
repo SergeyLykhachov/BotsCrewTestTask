@@ -1,5 +1,11 @@
+DROP DATABASE IF EXISTS university;
+
+CREATE DATABASE university;
+
+USE university;
+
 CREATE TABLE degree(
-	degree_id INT AUTO_INCEREMENT,
+	degree_id INT AUTO_INCREMENT,
 	degree VARCHAR(19) NOT NULL,
 	PRIMARY KEY(degree_id)
 );
@@ -18,6 +24,20 @@ CREATE TABLE lector(
 	salary INT NOT NULL,
 	PRIMARY KEY(lector_id),
 	FOREIGN KEY(degree_id) REFERENCES degree(degree_id) ON DELETE NO ACTION
+);
+
+CREATE TABLE department(
+	department_name VARCHAR(40) UNIQUE NOT NULL,
+	head_id INT UNIQUE,
+	PRIMARY KEY(department_name),
+	FOREIGN KEY(head_id) REFERENCES lector(lector_id) ON DELETE NO ACTION
+);
+
+CREATE TABLE lector_department(
+	lector_id INT,
+	department_name VARCHAR(40),
+	FOREIGN KEY(lector_id) REFERENCES lector(lector_id) ON DELETE NO ACTION,
+	FOREIGN KEY(department_name) REFERENCES department(department_name) ON DELETE NO ACTION
 );
 
 INSERT INTO lector(first_name, last_name, degree_id, salary)
