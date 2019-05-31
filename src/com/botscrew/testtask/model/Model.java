@@ -26,14 +26,14 @@ public class Model implements Subject {
 			PreparedStatement ps = con.prepareStatement(sql);
 		) {
 			Stream.iterate(0, n  ->  n  + 1)
-    			.limit(params.length)
-    			.forEach(
-    				i -> {
-    					try {
-    						ps.setString(i + 1, params[i]);
-    					} catch (SQLException e) {
-    						LOGGER.error(e.getMessage(), e);
-    					}
+    				.limit(params.length)
+    				.forEach(
+    					i -> {
+    						try {
+    							ps.setString(i + 1, params[i]);
+    						} catch (SQLException e) {
+    							LOGGER.error(e.getMessage(), e);
+    						}
 			});
 			LOGGER.info(extractSqlFromPreparedStatement(ps));
 			this.resultSet = ps.executeQuery();
