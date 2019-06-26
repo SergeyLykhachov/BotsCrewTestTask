@@ -1,5 +1,5 @@
 Given project is an implementation of the speck defined in BotsCrew TestTask_JuniorJava.pdf file present in the project's
-root directory (with a few caveats). Though it is proscribed that the project to be implemented as a simple console app,
+root directory (with a few caveats). Though it is proscribed that the project is to be implemented as a simple console app,
 this particular application interacts with its user via an intuitive and simple to use graphical interface. The project 
 has been written entirely with the help a of simple text editor, there exists a version of this project developed with the
 help of Maven, which can be found at: https://github.com/SergeyLykhachov/BotsCrewMavenProject. Build and launch scripts
